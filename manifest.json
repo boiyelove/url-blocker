@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "URL Blocker",
+  "version": "1.0",
+  "description": "Blocks a list of URLs",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
