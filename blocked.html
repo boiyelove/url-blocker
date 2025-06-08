@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Blocked</title>
+  <style>
+    body {
+      background-color: #ff0000;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    
+    .blocked-container {
+      max-width: 600px;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    
+    .back-button {
+      background-color: white;
+      color: #ff0000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    
+    .back-button:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="blocked-container">
+    <h1>Access Blocked</h1>
+    <p>The page has been blocked by URL Blocker.</p>
+    <button class="back-button" id="goBackButton">Go Back</button>
+  </div>
+
+  <!-- Link to the external script file -->
+  <script src="blocked.js" defer></script>
+</body>
+</html>

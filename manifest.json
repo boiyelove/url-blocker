@@ -1,16 +1,22 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "URL Blocker",
   "version": "1.0",
   "description": "Blocks a list of URLs",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "https://*/*"
+    "storage",
+    "tabs",
+    "webNavigation",
+    "declarativeNetRequest"
+    // "declarativeNetRequestFeedback" // Optional: for debugging rules
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
   ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "background.js"
+    // If background.js uses ES modules (import/export), add: "type": "module"
   },
   "content_scripts": [
     {
@@ -19,7 +25,14 @@
       "run_at": "document_idle"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html", "blocked.js"], // Add blocked.js here
+      "matches": ["<all_urls>"] // Or be more specific if possible
+    }
+  ]
 }
