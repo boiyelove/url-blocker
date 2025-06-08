@@ -31,3 +31,5 @@ A Chrome extension that blocks access to websites containing specific keywords i
 - Custom text on error page
 - Add keywords with timers that expire and remove them
 - Sync keywords across devices
+- Sync with work schedule using tag groups (other work is the greatest distraction to current work).
+- Close tab in 15 seconds with timer. Dispose is closed manually.
