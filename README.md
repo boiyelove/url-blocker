@@ -13,7 +13,7 @@ A Chrome extension that blocks access to websites containing specific keywords i
 
 ## How to Use
 
-1. Install the extension from the Chrome Web Store or load it as an unpacked extension
+1. Install the extension from the Chrome Web Store or load it as an unpacked extension (pending)
 2. Click on the extension icon to open the options page
 3. Add keywords you want to block
 4. Browse the web - any page containing your blocked keywords will be automatically blocked
