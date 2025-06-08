@@ -35,6 +35,12 @@ function displayBlockedItems(blockedItems) {
     return;
   }
 
+  // Log the number of items for debugging
+  console.log(`Displaying ${blockedItems.length} blocked items`);
+  
+  // Create a document fragment for better performance
+  const fragment = document.createDocumentFragment();
+  
   blockedItems.forEach(function(item, index) {
     const itemElement = document.createElement('div');
     itemElement.className = 'blocked-item';
@@ -42,8 +48,11 @@ function displayBlockedItems(blockedItems) {
       <span>${item}</span>
       <button class="remove-btn" data-index="${index}">Remove</button>
     `;
-    blockedList.appendChild(itemElement);
+    fragment.appendChild(itemElement);
   });
+  
+  // Append all items at once
+  blockedList.appendChild(fragment);
 
   // Add event listeners to remove buttons
   document.querySelectorAll('.remove-btn').forEach(button => {
