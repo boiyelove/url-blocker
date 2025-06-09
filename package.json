@@ -1,0 +1,20 @@
+{
+  "name": "url-blocker",
+  "version": "1.0.0",
+  "description": "A Chrome extension that blocks access to websites containing specific keywords",
+  "main": "background.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "jest-chrome": "^0.8.0",
+    "jest-environment-jsdom": "^27.5.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
+  }
+}
