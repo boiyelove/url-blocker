@@ -33,6 +33,10 @@
     button:hover {
       background-color: #3E8E41;
     }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
     #blocked-list {
       margin-top: 20px;
       border: 1px solid #eee;
@@ -46,12 +50,50 @@
       background-color: #f5f5f5;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+    .blocked-item-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .item-actions {
+      display: flex;
+      gap: 5px;
+    }
+    .expiration-info {
+      font-size: 0.8em;
+      color: #666;
+      margin-top: 3px;
     }
     .remove-btn {
       background-color: #f44336;
     }
     .remove-btn:hover {
       background-color: #d32f2f;
+    }
+    .edit-btn {
+      background-color: #2196F3;
+    }
+    .edit-btn:hover {
+      background-color: #0b7dda;
+    }
+    .expiration-controls {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .expiration-controls label {
+      margin-right: 10px;
+    }
+    #duration-display {
+      margin-left: 10px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    #expiration-date {
+      width: auto;
     }
   </style>
 </head>
@@ -60,6 +102,11 @@
   
   <div class="input-group">
     <input type="text" id="block-input" placeholder="Enter URL or keyword to block">
+    <div class="expiration-controls">
+      <label for="expiration-date">Expires on:</label>
+      <input type="datetime-local" id="expiration-date">
+      <span id="duration-display"></span>
+    </div>
     <button id="add-button">Add to Block List</button>
   </div>
   
